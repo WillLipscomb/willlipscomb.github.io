@@ -65,6 +65,10 @@ nav {
   left: 250;
 }
 
+#positionMe {
+  position: relative;
+}
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
