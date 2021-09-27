@@ -17,6 +17,16 @@ div {
   margin-bottom: 50px;
 }
 
+span {
+  width: 100px;
+  height: 50px;
+  padding: 5, 20, 5, 20;
+  background-color: yellow;
+  border-style: solid;
+  border-width: 5px;
+  border-color: blue;
+}
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
