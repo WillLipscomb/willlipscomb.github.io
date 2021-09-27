@@ -1,4 +1,5 @@
 /* --- put your css here --- */ 
+/* Part A */
 body {
   background-color: lightskyblue;
 }
@@ -9,6 +10,11 @@ body {
 
 .classy {
   margin-left: 10px;
+}
+
+/* Part B */
+div {
+  margin-bottom: 50px;
 }
 
 /* --- pre-existing css --- */
