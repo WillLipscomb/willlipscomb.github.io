@@ -39,6 +39,7 @@ span.c {
 
 /* Part C */
 nav {
+  top: 0px;
   position: sticky;
   background-color: green;
   opacity: 0.9;
