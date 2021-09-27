@@ -59,6 +59,12 @@ nav {
   bottom: 150px;
 }
 
+.bird {
+  position: absolute;
+  top: 50px;
+  left: 250;
+}
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
