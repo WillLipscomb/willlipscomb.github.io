@@ -37,6 +37,14 @@ span.c {
   display:inline-block
 }
 
+/* Part C */
+nav {
+  position: sticky;
+  background-color: green;
+  opacity: 0.9;
+  padding: 5px;
+  font-size: 20px;
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
