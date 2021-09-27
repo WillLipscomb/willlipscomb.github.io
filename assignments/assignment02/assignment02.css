@@ -25,6 +25,18 @@ span {
   border: 5px solid blue;
 }
 
+span.a {
+  display:inline;
+}
+
+span.b {
+  display:block;
+}
+
+span.c {
+  display:inline-block
+}
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
