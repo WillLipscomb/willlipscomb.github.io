@@ -47,6 +47,18 @@ nav {
   font-size: 20px;
 }
 
+.cat {
+  bottom: 0px;
+  right: 0px;
+  position: fixed;
+}
+
+.dog {
+  position: relative;
+  left: 50px;
+  top: 150px;
+}
+
 /* --- pre-existing css --- */
 .stripey tr:nth-child(even) {
   background-color: gray;
