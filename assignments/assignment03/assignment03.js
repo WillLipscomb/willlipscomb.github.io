@@ -25,6 +25,7 @@ function add1 (elem) {
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
   }
+  updateOver(elem);
 }
 
 //Create subtraction function
@@ -36,5 +37,23 @@ function sub1 (elem){
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
   }
+  updateOver(elem);
 }
+
+//Create function to update Over
+function updateOver (elem){
+  //If there's no score, make sure there's no over
+  if (elem.children[2].innerHTML == "-"){
+    elem.children[3].innerHTML = "-";
+    return;
+  }
+  
+  //Get difference between score and par
+  let par = elem.children[1].innerHTML;
+  par = Number.parseInt(par);
+  let currentScore = elem.children[2].innerHTML;
+  currentScore = Number.parseInt(currentScore);
+  elem.children[3].innerHTML = currentScore - par;
+}
+  
 
