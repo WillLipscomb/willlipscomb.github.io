@@ -24,6 +24,7 @@ function add1 (elem) {
   }
   //Update other info
   updateOver(elem);
+  updateTotals();
 }
 
 //Create subtraction function
@@ -37,6 +38,7 @@ function sub1 (elem){
   }
   //Update other info
   updateOver(elem);
+  updateTotals();
 }
 
 //Create function to update Over
