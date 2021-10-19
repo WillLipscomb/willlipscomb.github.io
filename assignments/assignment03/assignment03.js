@@ -2,13 +2,10 @@
 //Modified and added to by William Lipscomb
 
 let elem = [];
-//Assign table rows to variables
-elem[1] = document.getElementById("1");
 
-//Assign a function to the + button
-//elem[1].children[4].children[0].onclick = function(){add1(elem[1]);};
+elem[19] = document.getElementById("totals");
 
-//Assign functions to all buttons
+//Assign table rows to variables and assign functions to all buttons
 for(let i=1; i<=18; i++) {
   elem[i] = document.getElementById(i.toString());
   elem[i].children[4].children[0].onclick = function(){add1(elem[i]);};
@@ -25,6 +22,7 @@ function add1 (elem) {
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
   }
+  //Update other info
   updateOver(elem);
 }
 
@@ -37,6 +35,7 @@ function sub1 (elem){
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
   }
+  //Update other info
   updateOver(elem);
 }
 
@@ -56,4 +55,37 @@ function updateOver (elem){
   elem.children[3].innerHTML = currentScore - par;
 }
   
-
+//Create function to keep totals updated
+function updateTotals () {
+  let totalPar = 0;
+  let totalScore = 0;
+  let totalDiff = 0;
+  let totalPlayedPar = 0;
+  
+  //Loop to calculate total par (useful when the pars can change)
+  for(let i=1; i<=18; i++) {
+    let par = elem[i].children[1].innerHTML;
+    par = Number.parseInt(par);
+    totalPar += par;
+    if(elem[i].children[2].innerHTML != "-") {
+      totalPlayedPar += par;
+    }
+  }
+  
+  //Loop to calculate total score
+  for(let i=1; i<=18; i++) {
+    if(elem[i].children[2].innerHTML != "-") {
+      let score = elem[i].children[2].innerHTML;
+      score = Number.parseInt(score);
+      totalScore += score;
+    }
+  }
+  
+  //Calculate total diff
+  totalDiff = totalScore - totalPlayedPar;
+  
+  //Update text
+  elem[19].children[1].innerHTML = totalPar;
+  elem[19].children[2].innerHTML = totalScore;
+  elem[19].children[3].innerHTML = totalDiff;
+}
