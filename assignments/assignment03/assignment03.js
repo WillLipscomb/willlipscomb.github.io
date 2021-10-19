@@ -10,6 +10,7 @@ for(let i=1; i<=18; i++) {
   elem[i] = document.getElementById(i.toString());
   elem[i].children[4].children[0].onclick = function(){add1(elem[i]);};
   elem[i].children[4].children[1].onclick = function(){sub1(elem[i]);};
+  elem[i].children[4].children[2].onclick = function(){clear(elem[i]);};
 }
 //Side note: I'm not sure if it was intended, but this for loop that conveniently finishes step 6 was left in the CodePen. I modified for 7 and 10 though.
 
@@ -37,6 +38,13 @@ function sub1 (elem){
     elem.children[2].innerHTML = currentScore - 1;
   }
   //Update other info
+  updateOver(elem);
+  updateTotals();
+}
+
+//Create clear function
+function clear (elem){
+  elem.children[2].innerHTML = "-";
   updateOver(elem);
   updateTotals();
 }
