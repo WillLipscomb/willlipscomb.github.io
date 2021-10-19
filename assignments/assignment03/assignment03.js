@@ -14,6 +14,7 @@ for(let i=1; i<=18; i++) {
   elem[i].children[4].children[0].onclick = function(){add1(elem[i]);};
   elem[i].children[4].children[1].onclick = function(){sub1(elem[i]);};
 }
+//Side note: I'm not sure if it was intended, but this for loop that conveniently finishes step 6 was left in the CodePen. I modified for 7 and 8 though.
 
 //Create an "add1" function
 function add1 (elem) {
