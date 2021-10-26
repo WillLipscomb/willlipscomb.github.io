@@ -25,8 +25,7 @@
 			<input name='clubName' id='clubName' type='text' 
 			    class='form-control cmn_moreHeight' 
 				placeholder='Driver' required /><br>
-			<button class='btn btn-success cmn_fullHeight' 
-			    onclick='addClub();'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
+			<button class='btn btn-success cmn_fullHeight' onclick='addClub(document.getElementById("clubName").value);'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button>
 			<button class='btn btn-danger cmn_fullHeight'  
 			    onclick='cancelClub();'>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
 			<br>
@@ -47,16 +46,16 @@
 	// retrieve the "clubs" array
 	let clubs = JSON.parse(localStorage.getItem('clubs'));
 	// display the full clubName of the user-chosen club
-	let newClubName = document.getElementById("clubName").value;
-	let newClubDistances;
+	//let newClubName;
+	//let newClubDistances;
 	
-	function addClub() {
+	function addClub(newClubName) {
 		let clubCount = 14;
 		clubCount++;
 		if (clubCount >= 15) {
 			window.alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition.");
 		}
-		clubs.push([0, "",  newClubName, 0, 0, 0, 0, 0, 0, 0]);
+		clubs.push([0, "", newClubName, 0, 0, 0, 0, 0, 0, 0]);
 	}
 	
 	// navigate to club distance LIST screen
