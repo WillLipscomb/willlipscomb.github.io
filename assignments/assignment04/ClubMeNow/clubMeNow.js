@@ -93,7 +93,6 @@ function displayClubDistanceEntryForm(c) {
 function undoLastShot() {
         // your code here !
 	clubs = JSON.parse(localStorage.getItem("clubsUndo"));
-	loadClubDistances();
 	window.location.href = "clubDistanceList.html"; 
 }
 
