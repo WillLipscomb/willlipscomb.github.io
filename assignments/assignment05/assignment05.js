@@ -122,7 +122,7 @@ function loadContent() {
 
             covidJson = this.responseText;
             covidJsObj = JSON.parse(covidJson);
-            var newArray = [] 
+            newArray = [] 
             
             for (let i=0; i<covidJsObj.Countries.length; i++) {
               newArray.push({
