@@ -215,7 +215,7 @@ var populations = {
     'austria': 8915382,
     'switzerland': 8632703,
 }
-
+/*
 // step2 
 // new array 
 // loop through all covidJsObj.Countries[i] 
@@ -232,4 +232,4 @@ for (let i=0; i<covidJsObj.Countries.length; i++) {
 }
 
 newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc")
-
+*/
