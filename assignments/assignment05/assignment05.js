@@ -234,8 +234,8 @@ function loadContent() {
               "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
               "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
               "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
-              //"Population": populations.[this.Slug],
-              //"TotalConfirmedPer100000": ( this.TotalConfirmed / this.Population ) * 100000
+              "Population": populations.[this.Slug],
+              "TotalConfirmedPer100000": ( this.TotalConfirmed / this.Population ) * 100000
               }) ;
             }
 
@@ -246,17 +246,17 @@ function loadContent() {
 
             chartData.data.datasets[0].backgroundColor = "rgba(100,100,100,0.4)"; // gray
             chartData.data.datasets[1].backgroundColor = "rgba(255,0,0,0.4)"; // red
-           // chartData.data.datasets[2].backgroundColor = "rgba(0,0,255,0.4)"; //blue
+            chartData.data.datasets[2].backgroundColor = "rgba(0,0,255,0.4)"; //blue
             chartData.data.datasets[0].label = 'Total Confirmed';
             chartData.data.datasets[1].label = 'Total Deaths';
-           // chartData.data.datasets[2].label = 'Total Confirmed per 100,000';
+            chartData.data.datasets[2].label = 'Total Confirmed per 100,000';
             chartData.data.labels = newArray.map((x) => x.Slug);
             chartData.data.datasets[0].data = newArray.map(
                 (x) => x.TotalConfirmed);
             chartData.data.datasets[1].data = newArray.map(
                 (x) => x.TotalDeaths);
-          //  chartData.data.datasets[2].data = newArray.map(
-          //      x => x.TotalConfirmedPer100000);
+            chartData.data.datasets[2].data = newArray.map(
+                x => x.TotalConfirmedPer100000);
             chartData.options.title.text = "Covid 19 Hotspots: " + dayjs().format("DD-MM-YYYY"); //Day-Month-Year, as that is what I'm used to formatting dates as for global use
             myChart = new Chart(ctx, chartData);
 
