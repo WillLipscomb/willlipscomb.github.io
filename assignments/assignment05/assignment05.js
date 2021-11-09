@@ -100,7 +100,7 @@ function loadContent() {
                 (x) => x.NewConfirmed);
             chartData.data.datasets[1].data = newConfirmedOver1000.map(
                 (x) => x.NewDeaths);
-            chartData.options.title.text = "Covid 19 Hotspots -" + dayjs().format("DD-MM-YYYY"); //Day-Month-Year, as that is what I'm used to formatting dates as for global use
+            chartData.options.title.text = "Covid 19 Hotspots: " + dayjs().format("DD-MM-YYYY"); //Day-Month-Year, as that is what I'm used to formatting dates as for global use
             myChart = new Chart(ctx, chartData);
 
         } // end if
