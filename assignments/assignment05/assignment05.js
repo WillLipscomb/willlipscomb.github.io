@@ -240,7 +240,7 @@ function loadContent() {
               "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
               "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
               "Population": populations[covidJsObj.Countries[i].Slug],
-              "TotalConfirmedPer100000": ( TotalConfirmed / Population ) * 100000
+              "TotalConfirmedPer100000": ( covidJsObj.Countries[i].TotalConfirmed / populations[covidJsObj.Countries[i].Slug] ) * 100000
               }) ;
             }
 
