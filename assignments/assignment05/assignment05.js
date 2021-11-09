@@ -220,14 +220,16 @@ var populations = {
 // new array 
 // loop through all covidJsObj.Countries[i] 
 // push all info i need
-/*
 var newArray = [] 
 for (let i=0; i<covidJsObj.Countries.length; i++) {
   newArray.push({
     "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed
-    // continue here...
-  })
-  
+    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+    "Population": populations.[this.Slug],
+    "TotalConfirmedPer100000": this.TotalConfirmed / 100000
+  }) 
 }
-*/
+
+newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc")
+
