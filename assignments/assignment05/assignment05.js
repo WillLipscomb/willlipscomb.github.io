@@ -185,7 +185,7 @@ function loadContent() {
                 localStorage.setItem("lastGet", dayjs().format("DD-MM-YYYY"));
                 covidJson = this.responseText;
             } else {
-                covidJson = localStorage.getItem("covidData")){
+                covidJson = localStorage.getItem("covidData")
             }
             
             covidJsObj = JSON.parse(covidJson);
