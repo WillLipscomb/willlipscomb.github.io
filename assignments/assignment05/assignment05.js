@@ -179,7 +179,15 @@ function loadContent() {
         if (this.readyState == 4 &&
             this.status == 200) {
 
-            covidJson = this.responseText;
+            //Check if data already exists or if it's outdated
+            if(!localStorage.getItem("covidData") || localStorage.getItem("lastGet") != dayjs().format("DD-MM-YYYY")){
+                localStorage.setItem("covidData", this.responseText);
+                localStorage.setItem("lastGet", dayjs().format("DD-MM-YYYY"));
+                covidJson = this.responseText;
+            } else {
+                covidJson = localStorage.getItem("covidData")){
+            }
+            
             covidJsObj = JSON.parse(covidJson);
             newArray = [] ;
             
