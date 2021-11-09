@@ -239,7 +239,7 @@ function loadContent() {
               "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
               "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
               "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
-              "Population": populations.[this.Slug],
+              "Population": populations.(this.Slug),
               "TotalConfirmedPer100000": ( this.TotalConfirmed / this.Population ) * 100000
               }) ;
             }
