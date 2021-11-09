@@ -69,7 +69,7 @@ var chartData = {
 
 // code below modified from: 
 // https://www.w3schools.com/js/js_ajax_intro.asp
-
+/* 
 function loadContent() {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -111,6 +111,58 @@ function loadContent() {
     xhttp.send();
 
 } // end function loadContent() 
+*/
+
+//My loadContent function, modified from above
+function loadContent() {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 &&
+            this.status == 200) {
+
+            covidJson = this.responseText;
+            covidJsObj = JSON.parse(covidJson);
+            var newArray = [] 
+            
+            for (let i=0; i<covidJsObj.Countries.length; i++) {
+              newArray.push({
+              "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
+              "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
+              "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
+              "Population": populations.[this.Slug],
+              "TotalConfirmedPer100000": this.TotalConfirmed / 100000
+              }) 
+            }
+
+            newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc")
+            
+            //Filter out anything below 50000 total deaths
+            newArray = newArray.filter(x => x.TotalDeaths >= 50000)
+
+            chartData.data.datasets[0].backgroundColor = "rgba(100,100,100,0.4)"; // gray
+            chartData.data.datasets[1].backgroundColor = "rgba(255,0,0,0.4)"; // red
+            chartData.data.datasets[2].backgroundColor = "rgba(0,0,255,0.4)"; //blue
+            chartData.data.datasets[0].label = 'Total Confirmed';
+            chartData.data.datasets[1].label = 'Total Deaths';
+            chartData.data.labels = newArray.map((x) => x.Slug);
+            chartData.data.datasets[0].data = newArray.map(
+                (x) => x.TotalConfirmed);
+            chartData.data.datasets[1].data = newArray.map(
+                (x) => x.TotalDeaths);
+            chartData.data.datasets[2].data = newArray.map(
+                x => x.TotalConfirmedPer100000)
+            chartData.options.title.text = "Covid 19 Hotspots: " + dayjs().format("DD-MM-YYYY"); //Day-Month-Year, as that is what I'm used to formatting dates as for global use
+            myChart = new Chart(ctx, chartData);
+
+        } // end if
+
+    }; // end xhttp.onreadystatechange = function()
+
+    xhttp.open("GET", URL, true);
+    xhttp.send();
+
+} // end function loadContent() 
+
 
 // data from: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
 var populations = {
