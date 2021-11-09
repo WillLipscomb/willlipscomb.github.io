@@ -169,60 +169,10 @@ var populations = {
     'switzerland': 8632703,
 }
 
-// var myChart = new Chart(ctx, chartData); 
-
-// ---------- loadContent() function ----------
-
-// Note: you can't execute API data dependent code outside the loadContent() function because the code might execute before the AJAX call responds, that is, it might execute before the variable, covidJson, is initialized with data from the API. Example below.
-// console.log(covidJson.Global.NewConfirmed); // error 
-
 // code below modified from: 
 // https://www.w3schools.com/js/js_ajax_intro.asp
-/* 
-function loadContent() {
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 &&
-            this.status == 200) {
 
-            covidJson = this.responseText;
-            covidJsObj = JSON.parse(covidJson);
-            newConfirmedOver1000 = [];
-
-            for (let c of covidJsObj.Countries) {
-                if (c.NewConfirmed > 5000) {
-                    newConfirmedOver1000.push({
-                        "Slug": c.Slug,
-                        "NewConfirmed": c.NewConfirmed,
-                        "NewDeaths": c.NewDeaths
-                    });
-                }
-            }
-            newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
-
-            chartData.data.datasets[0].backgroundColor = "rgba(100,100,100,0.4)"; // gray
-            chartData.data.datasets[1].backgroundColor = "rgba(255,0,0,0.4)"; // red
-            chartData.data.datasets[0].label = 'new cases';
-            chartData.data.datasets[1].label = 'new deaths';
-            chartData.data.labels = newConfirmedOver1000.map((x) => x.Slug);
-            chartData.data.datasets[0].data = newConfirmedOver1000.map(
-                (x) => x.NewConfirmed);
-            chartData.data.datasets[1].data = newConfirmedOver1000.map(
-                (x) => x.NewDeaths);
-            chartData.options.title.text = "Covid 19 Hotspots: " + dayjs().format("DD-MM-YYYY"); //Day-Month-Year, as that is what I'm used to formatting dates as for global use
-            myChart = new Chart(ctx, chartData);
-
-        } // end if
-
-    }; // end xhttp.onreadystatechange = function()
-
-    xhttp.open("GET", URL, true);
-    xhttp.send();
-
-} // end function loadContent() 
-*/
-
-//My loadContent function, modified from above
+//My loadContent function, modified from old code
 function loadContent() {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -272,22 +222,3 @@ function loadContent() {
     xhttp.send();
 
 } // end function loadContent() 
-
-/*
-// step2 
-// new array 
-// loop through all covidJsObj.Countries[i] 
-// push all info i need
-var newArray = [] 
-for (let i=0; i<covidJsObj.Countries.length; i++) {
-  newArray.push({
-    "Slug": "\"" + covidJsObj.Countries[i].Slug + "\"",
-    "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
-    "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
-    "Population": populations.[this.Slug],
-    "TotalConfirmedPer100000": this.TotalConfirmed / 100000
-  }) 
-}
-
-newArray = _.orderBy(newArray, "TotalConfirmedPer100000", "desc")
-*/
