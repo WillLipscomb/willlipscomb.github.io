@@ -31,9 +31,9 @@ var chartData = {
             data: [2, 29, 5, 5, 2, 3, 10],
             backgroundColor: "rgba(255,140,0,0.4)"
         }, {
-            label: 'oranges',
-            data: [2, 29, 5, 5, 2, 3, 10],
-            backgroundColor: "rgba(255,140,0,0.4)"
+            label: 'grapes',
+            data: [2, 37, 5, 5, 2, 3, 10],
+            backgroundColor: "rgba(0,0,255,0.4)"
         }]
         
     },
