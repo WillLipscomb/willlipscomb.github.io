@@ -109,12 +109,17 @@ function updateLoansArray() {
   }
   
   //Update YE Bal
-  let total = 0;
+  let totalBal = 0;
   for(var i=0; i<5; i++){
     var loanWithInterest = loans[i].loan_amount * (1 + loans[i].loan_int_rate);
-    console.log(loanWithInterest);
-    total += loanWithInterest
-    console.log(total);
-    $("#loan_bal0" + (i+1)).text(toComma(total.toFixed(2)));
+    totalBal += loanWithInterest
+    $("#loan_bal0" + (i+1)).text(toComma(totalBal.toFixed(2)));
   }
+  
+  //Update interest accrued
+  let totalAmt = 0;
+  for(var i=0; i<5; i++){
+    totalAmt += loans[i].loan_amount;
+  }
+  $("#loan_int_accrued").text(totalBal - totalAmt);
 }
