@@ -74,7 +74,7 @@ function loadDoc() {
 
         localStorage.setItem("loanData", loans);
     } else {
-        loans = localStorage.getItem("loanData");
+        loans = JSON.Parse(localStorage.getItem("loanData"));
 
         for (var i = 2; i < 6; i++) {
             //setting properties to table
