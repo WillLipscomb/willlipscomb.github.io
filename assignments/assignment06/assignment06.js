@@ -60,7 +60,7 @@ var loans = [
   $("#loan_year01").blur( function() {
     let regex = /[0-9]{4}/;
     if(regex.test($("#loan_year01").val()) == false){
-      window.alert("Please enter a valid year");
+      window.alert("Please enter a valid year.");
     }
     updateLoansArray();
   });
@@ -68,24 +68,48 @@ var loans = [
   $("#loan_int01").blur( function() {
     let regex = /[0][.][0-9]{4}/;
     if(regex.test($("#loan_int01").val()) == false){
-      window.alert("Please enter a valid year");
+      window.alert("Please enter a valid interest rate.");
+    }
+    updateLoansArray();
+  });
+    
+  $("#loan_amt01").blur(function(){
+    let regex = /[0-9]{1,}[.][0-9]{2}/;
+    if(regex.test($("#loan_amt01").val()) == false){
+      window.alert("Please enter a valid loan amount.");
+    }
+    updateLoansArray();
+  });
+    
+  $("#loan_amt02").blur(function(){
+    let regex = /[0-9]{1,}[.][0-9]{2}/;
+    if(regex.test($("#loan_amt02").val()) == false){
+      window.alert("Please enter a valid loan amount.");
     }
     updateLoansArray();
   });
   
-  $("#loan_amt02").blur(function(){
-    updateLoansArray();
-  });
-  
   $("#loan_amt03").blur(function(){
+    let regex = /[0-9]{1,}[.][0-9]{2}/;
+    if(regex.test($("#loan_amt03").val()) == false){
+      window.alert("Please enter a valid loan amount.");
+    }
     updateLoansArray();
   });
     
   $("#loan_amt04").blur(function(){
+    let regex = /[0-9]{1,}[.][0-9]{2}/;
+    if(regex.test($("#loan_amt04").val()) == false){
+      window.alert("Please enter a valid loan amount.");
+    }
     updateLoansArray();
   });
     
   $("#loan_amt05").blur(function(){
+    let regex = /[0-9]{1,}[.][0-9]{2}/;
+    if(regex.test($("#loan_amt05").val()) == false){
+      window.alert("Please enter a valid loan amount.");
+    }
     updateLoansArray();
   });
 } // end: function loadDoc()
