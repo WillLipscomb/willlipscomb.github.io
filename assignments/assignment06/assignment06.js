@@ -118,8 +118,11 @@ function updateLoansArray() {
   
   //Update interest accrued
   let totalAmt = 0;
+  let intAccrued = 0;
   for(var i=0; i<5; i++){
     totalAmt += loans[i].loan_amount;
   }
-  $("#loan_int_accrued").text(toComma((totalBal - totalAmt).toFixed(2)));
+  intAccrued = totalBal - totalAmt;
+  
+  $("#loan_int_accrued").text(toComma(intAccrued.toFixed(2)));
 }
