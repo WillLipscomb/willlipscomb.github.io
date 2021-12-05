@@ -92,10 +92,15 @@ function updateLoansArray() {
   loans[0].loan_year = parseInt($("#loan_year01").val());
   loans[0].loan_int_rate = parseFloat($("#loan_int01").val());
   
-  //Update amounts
+  /*Update amounts (for loop didn't work, doing it old school)
   for (var i = 0; i < 5; i++){
     loans[i].loan_amount = parseFloat($("loan_amt0" + (i + 1)).val());
-  }
+  }*/
+  loans[0].loan_amount = parseFloat($("loan_amt01").val());
+  loans[1].loan_amount = parseFloat($("loan_amt02").val());
+  loans[2].loan_amount = parseFloat($("loan_amt03").val());
+  loans[3].loan_amount = parseFloat($("loan_amt04").val());
+  loans[4].loan_amount = parseFloat($("loan_amt05").val());
   
   //Loop to update info
   for(var i=1; i<5; i++) {
