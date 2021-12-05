@@ -9,9 +9,7 @@ var loans = [
 ]; 
 
 
-// --- function: loadDoc() ---
-
-function loadDoc() {
+// --- function: loadDoc() --
   
   function loadDoc() {
 
