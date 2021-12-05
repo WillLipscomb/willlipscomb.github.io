@@ -71,38 +71,29 @@ function loadDoc() {
             loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
             $("#loan_bal0" + i).html(toComma(loanWithInterest.toFixed(2)));
         } // end: "for" loop
+
+        localStorage.setItem("loanData", loans);
+    } else {
+        loans = localStorage.getItem("loanData");
+
+        for (var i = 2; i < 6; i++) {
+            //setting properties to table
+            $("#loan_year0" + i).prop("disabled", true);
+            $("#loan_year0" + i).css({
+                backgroundColor: "grey"
+            });
+            $("#loan_year0" + i).css({
+                color: "white"
+            });
+            $("#loan_int0" + i).prop("disabled", true);
+            $("#loan_int0" + i).css({
+                backgroundColor: "gray"
+            });
+            $("#loan_int0" + i).css({
+                color: "white"
+            });
+        } // end: "for" loop
     }
-
-    /* Old code  
-  // pre-fill defaults for first loan year
-  var defaultYear = loans[0].loan_year;
-  $("#loan_year0" + 1).val(defaultYear++);
-  var defaultLoanAmount = loans[0].loan_amount;
-  $("#loan_amt0" + 1).val(defaultLoanAmount.toFixed(2));
-  var defaultInterestRate = loans[0].loan_int_rate;
- $("#loan_int0" + 1).val(defaultInterestRate);
-  var loanWithInterest = loans[0].loan_amount * (1 + loans[0].loan_int_rate);
- $("#loan_bal0" + 1).html = toComma(loanWithInterest.toFixed(2));
-*/
-    // pre-fill defaults for other loan years and int rates
-
-    for (var i = 2; i < 6; i++) {
-        //setting properties to table
-        $("#loan_year0" + i).prop("disabled", true);
-        $("#loan_year0" + i).css({
-            backgroundColor: "grey"
-        });
-        $("#loan_year0" + i).css({
-            color: "white"
-        });
-        $("#loan_int0" + i).prop("disabled", true);
-        $("#loan_int0" + i).css({
-            backgroundColor: "gray"
-        });
-        $("#loan_int0" + i).css({
-            color: "white"
-        });
-    } // end: "for" loop
 
     // all input fields: select contents on focus (jquery) 
     $("input[type=text]").focus(function() {
@@ -217,4 +208,6 @@ function updateLoansArray() {
     intAccrued = totalBal - totalAmt;
 
     $("#loan_int_accrued").text(toComma(intAccrued.toFixed(2)));
+
+    localStorage.setItem("loanData", loans);
 }
