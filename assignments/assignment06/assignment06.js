@@ -78,7 +78,7 @@ function updateLoansArray() {
   
   //Update amounts
   for (var i = 0; i < 5; i++){
-    loans[i].loan_amount = parseFloat($("loan_int0" + (i + 1)).val());
+    loans[i].loan_amount = parseFloat($("loan_amt0" + (i + 1)).val());
   }
   
   //Loop to update info
