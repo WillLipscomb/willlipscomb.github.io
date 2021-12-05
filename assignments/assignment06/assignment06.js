@@ -55,7 +55,8 @@ var loans = [
   
   // set focus to first year: messes up codepen
   // $("#loan_year01").focus();
-  // update loans array when exiting "year" input field (jquery)
+    
+  // update loans array when exiting input fields (jquery)
   $("#loan_year01").blur( function() {
     updateLoansArray();
   });
@@ -64,6 +65,21 @@ var loans = [
     updateLoansArray();
   });
   
+  $("#loan_amt02").blur(function(){
+    updateLoansArray();
+  });
+  
+  $("#loan_amt03").blur(function(){
+    updateLoansArray();
+  });
+    
+  $("#loan_amt04").blur(function(){
+    updateLoansArray();
+  });
+    
+  $("#loan_amt05").blur(function(){
+    updateLoansArray();
+  });
 } // end: function loadDoc()
 
 
