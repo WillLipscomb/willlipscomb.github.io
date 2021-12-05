@@ -59,6 +59,10 @@ var loans = [
   $("#loan_year01").blur( function() {
     updateLoansArray();
   });
+    
+  $("#loan_int01").blur( function() {
+    updateLoansArray();
+  });
   
 } // end: function loadDoc()
 
