@@ -71,8 +71,8 @@ function loadDoc() {
             loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
             $("#loan_bal0" + i).html(toComma(loanWithInterest.toFixed(2)));
         } // end: "for" loop
-
-        localStorage.setItem("loanData", loans);
+            
+        localStorage.setItem("loanData", JSON.Stringify(loans));
     } else {
         loans = JSON.Parse(localStorage.getItem("loanData"));
 
