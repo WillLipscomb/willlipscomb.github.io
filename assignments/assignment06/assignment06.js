@@ -56,8 +56,11 @@ var loans = [
   // set focus to first year: messes up codepen
   // $("#loan_year01").focus();
     
-  // update loans array when exiting input fields (jquery)
+  // Check input and update loans array when exiting input fields (jquery)
   $("#loan_year01").blur( function() {
+    if($("#loan_year01").val().match([0-9]{4})){
+      window.alert("Please enter a valid year");
+    }
     updateLoansArray();
   });
     
