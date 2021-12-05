@@ -74,5 +74,9 @@ function updateLoansArray() {
   for(var i=1; i<5; i++) {
     loans[i].loan_year = loans[0].loan_year + i;
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year); // jquery
+    
+    //Interest rate
+    loans[i].loan_int_rate = loans[0].loan_int_rate + i;
+    $("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
   }
 }
