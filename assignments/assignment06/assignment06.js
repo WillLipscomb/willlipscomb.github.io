@@ -109,6 +109,6 @@ function updateLoansArray() {
     
     //Update YE Bal
     var loanWithInterest = loans[i].loan_amount * (1 + loans[i].loan_int_rate);
-    $("#loan_bal0" + (i+1)).html = toComma(loanWithInterest.toFixed(2));
+    $("#loan_bal0" + (i+1)).val(toComma(loanWithInterest.toFixed(2)));
   }
 }
