@@ -72,11 +72,28 @@ function loadDoc() {
             $("#loan_bal0" + i).html(toComma(loanWithInterest.toFixed(2)));
         } // end: "for" loop
             
+        //Set local data with defaults
         localStorage.setItem("loanData", JSON.Stringify(loans));
     } else {
+        //Update loans with local data
         loans = JSON.Parse(localStorage.getItem("loanData"));
 
+        //Set everything using the local data
+        var defaultYear = loans[0].loan_year;
+        $("#loan_year0" + 1).val(defaultYear++);
+        var defaultLoanAmount = loans[0].loan_amount;
+        $("#loan_amt0" + 1).val(defaultLoanAmount.toFixed(2));
+        var defaultInterestRate = loans[0].loan_int_rate;
+        $("#loan_int0" + 1).val(defaultInterestRate);
+        var loanWithInterest = loans[0].loan_amount * (1 + loans[0].loan_int_rate);
+        $("#loan_bal0" + 1).html = toComma(loanWithInterest.toFixed(2));
+            
         for (var i = 2; i < 6; i++) {
+
+            //convert prefills to JQuery
+            $("#loan_year0" + i).val(defaultYear++);
+
+            $("#loan_int0" + i).val("#loan_int01");
             //setting properties to table
             $("#loan_year0" + i).prop("disabled", true);
             $("#loan_year0" + i).css({
@@ -85,6 +102,8 @@ function loadDoc() {
             $("#loan_year0" + i).css({
                 color: "white"
             });
+            $("#loan_amt0" + i).val(defaultLoanAmount.toFixed(2));
+            $("#loan_int0" + i).val(defaultInterestRate);
             $("#loan_int0" + i).prop("disabled", true);
             $("#loan_int0" + i).css({
                 backgroundColor: "gray"
@@ -92,6 +111,8 @@ function loadDoc() {
             $("#loan_int0" + i).css({
                 color: "white"
             });
+            loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
+            $("#loan_bal0" + i).html(toComma(loanWithInterest.toFixed(2)));
         } // end: "for" loop
     }
 
@@ -209,5 +230,6 @@ function updateLoansArray() {
 
     $("#loan_int_accrued").text(toComma(intAccrued.toFixed(2)));
 
+    //Update local data
     localStorage.setItem("loanData", loans);
 }
