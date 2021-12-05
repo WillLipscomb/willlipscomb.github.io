@@ -73,12 +73,12 @@ function loadDoc() {
         } // end: "for" loop
             
         //Set local data with defaults
-        let loansString = JSON.Stringify(loans)
+        let loansString = JSON.stringify(loans)
         localStorage.setItem("loanData", loansString);
     } else {
         //Update loans with local data
         let loansString = localStorage.getItem("loanData")
-        loans = JSON.Parse();
+        loans = JSON.parse();
 
         //Set everything using the local data
         var defaultYear = loans[0].loan_year;
