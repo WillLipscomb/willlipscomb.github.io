@@ -66,6 +66,10 @@ var loans = [
   });
     
   $("#loan_int01").blur( function() {
+    let regex = /[0][.][0-9]{4}/;
+    if(regex.test($("#loan_int01").val()) == false){
+      window.alert("Please enter a valid year");
+    }
     updateLoansArray();
   });
   
