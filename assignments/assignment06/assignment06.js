@@ -58,8 +58,8 @@ var loans = [
     
   // Check input and update loans array when exiting input fields (jquery)
   $("#loan_year01").blur( function() {
-    let temp = $("#loan_year01").val()
-    if(temp.test(/[0-9]{4}/) == false){
+    let regex = /[0-9]{4}/;
+    if(regex.test($("#loan_year01").val()) == false){
       window.alert("Please enter a valid year");
     }
     updateLoansArray();
