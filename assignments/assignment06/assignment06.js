@@ -72,17 +72,18 @@ function toComma(value) {
 }
 
 function updateLoansArray() {
-  // update the loans array
-  loans[0].loan_year = parseInt($("#loan_year01").val()); // jquery
+  //Get values from input
+  loans[0].loan_year = parseInt($("#loan_year01").val());
+  loans[0].loan_int_rate = parseFloat($("#loan_int01").val());
   
-  loans[0].loan_int_rate = parseInt($("#loan_int01").val());
-  // update all the info in all columns
+  //Loop to update info
   for(var i=1; i<5; i++) {
+    //Update years
     loans[i].loan_year = loans[0].loan_year + i;
-    $("#loan_year0"+ (i+1) ).val(loans[i].loan_year); // jquery
+    $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
     
-    //Interest rate
-    loans[i].loan_int_rate = loans[0].loan_int_rate;
+    //Update interest rates
     $("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
+    loans[i].loan_int_rate = loans[0].loan_int_rate;
   }
 }
