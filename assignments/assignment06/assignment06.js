@@ -80,7 +80,7 @@ function updateLoansArray() {
     $("#loan_year0"+ (i+1) ).val(loans[i].loan_year); // jquery
     
     //Interest rate
-    loans[i].loan_int_rate = loans[0].loan_int_rate + i;
+    loans[i].loan_int_rate = loans[0].loan_int_rate;
     $("#loan_int0"+ (i+1) ).val(loans[i].loan_int_rate);
   }
 }
