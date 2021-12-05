@@ -97,11 +97,11 @@ function updateLoansArray() {
     loans[i].loan_amount = parseFloat($("#loan_amt0" + (i + 1)).val());
   }
   /*
-  loans[0].loan_amount = parseFloat($("loan_amt01").val());
-  loans[1].loan_amount = parseFloat($("loan_amt02").val());
-  loans[2].loan_amount = parseFloat($("loan_amt03").val());
-  loans[3].loan_amount = parseFloat($("loan_amt04").val());
-  loans[4].loan_amount = parseFloat($("loan_amt05").val());
+  loans[0].loan_amount = parseFloat($("#loan_amt01").val());
+  loans[1].loan_amount = parseFloat($("#loan_amt02").val());
+  loans[2].loan_amount = parseFloat($("#loan_amt03").val());
+  loans[3].loan_amount = parseFloat($("#loan_amt04").val());
+  loans[4].loan_amount = parseFloat($("#loan_amt05").val());
   */
   //Loop to update info
   for(var i=1; i<5; i++) {
