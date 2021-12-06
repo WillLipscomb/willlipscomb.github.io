@@ -249,6 +249,7 @@ function updateLoansArray() {
 }
 
 // ----- ANGULAR ----- Code from https://regie09.github.io/assignment06.html
+//Couldn't get angular to work in a timely manner and I have lots of other homework. Oh well, I tried.
 //creates variable app and assign value angular module
 var app = angular.module('myApp', []);
 
