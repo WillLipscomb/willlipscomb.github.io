@@ -235,4 +235,5 @@ function updateLoansArray() {
     //Update local data
     let loansString = JSON.stringify(loans)
     localStorage.setItem("loanData", loansString);
+    console.log(loansString);
 }
