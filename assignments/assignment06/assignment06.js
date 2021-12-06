@@ -253,8 +253,6 @@ app.controller('myCtrl', function($scope) {
   $scope.payments = []; // controller connects with the view in HTML
   $scope.populate = function () { //populates the payments array
     
-    updateForm(); //updates form
-    
     //payments
     let total = loanWithInterest; //calculate total
     let iRate = loans[0].loan_int_rate; 
