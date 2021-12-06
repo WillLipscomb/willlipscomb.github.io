@@ -78,7 +78,7 @@ function loadDoc() {
     } else {
         //Update loans with local data
         let loansString = localStorage.getItem("loanData")
-        loans = JSON.parse();
+        loans = JSON.parse(loansString);
 
         //Set everything using the local data
         var defaultYear = loans[0].loan_year;
