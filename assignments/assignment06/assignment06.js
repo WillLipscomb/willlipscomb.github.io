@@ -135,56 +135,63 @@ function loadDoc() {
         let regex = /[0-9]{4}/; //Check for a 4 digit year
         if (regex.test($("#loan_year01").val()) == false) {
             $("#loan_year01").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_int01").blur(function() {
         let regex = /[0][.][0-9]{4}/; //Check for a decimal interest rate
         if (regex.test($("#loan_int01").val()) == false) {
             $("#loan_int01").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_amt01").blur(function() {
         let regex = /[0-9]{1,}[.][0-9]{2}/; //Check for a number formatted as dollar amounts
         if (regex.test($("#loan_amt01").val()) == false) {
             $("#loan_amt01").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_amt02").blur(function() {
         let regex = /[0-9]{1,}[.][0-9]{2}/; //Check for a number formatted as dollar amounts
         if (regex.test($("#loan_amt02").val()) == false) {
            $("#loan_amt02").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_amt03").blur(function() {
         let regex = /[0-9]{1,}[.][0-9]{2}/; //Check for a number formatted as dollar amounts
         if (regex.test($("#loan_amt03").val()) == false) {
             $("#loan_amt03").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_amt04").blur(function() {
         let regex = /[0-9]{1,}[.][0-9]{2}/; //Check for a number formatted as dollar amounts
         if (regex.test($("#loan_amt04").val()) == false) {
             $("#loan_amt04").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 
     $("#loan_amt05").blur(function() {
         let regex = /[0-9]{1,}[.][0-9]{2}/; //Check for a number formatted as dollar amounts
         if (regex.test($("#loan_amt05").val()) == false) {
             $("#loan_amt05").css("background-color","red");
+        } else {
+            updateLoansArray();
         }
-        updateLoansArray();
     });
 } // end: function loadDoc()
 
