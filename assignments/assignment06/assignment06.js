@@ -254,7 +254,7 @@ app.controller('myCtrl', function($scope) {
   $scope.populate = function () { //populates the payments array
     
     //payments
-    let total = loanWithInterest; //calculate total
+    let total = $("#loan_int_accrued").text(); //calculate total
     let iRate = loans[0].loan_int_rate; 
     let r = iRate / 12;
     let n = 11;
