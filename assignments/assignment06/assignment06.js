@@ -200,6 +200,10 @@ function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+let toMoney = (value) => {
+  return `\$${toComma(value.toFixed(2))}`; 
+}
+
 function updateLoansArray() {
     //Get values from input
     loans[0].loan_year = parseInt($("#loan_year01").val());
